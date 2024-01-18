@@ -1,0 +1,10 @@
+module.exports = {
+    authSecret: 'abc',
+    db: {
+       host : process.env.POST_HOST,
+        port: process.env.POST_PORT,
+        database: process.env.POST_DATABASE,
+        user: process.env.POST_USER,
+        password: process.env.POST_PASSWORD
+    }
+}
