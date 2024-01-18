@@ -159,11 +159,10 @@ const getByIdCourseAllInformation= async (req,res)=>{
 const getByCourseAllInformation= async (req,res)=>{
   app.db({c: 'courses ', u: 'users'})
   .select('c.id ', 'c.name ', 'c.desccurta ',
-  'c.desccurta ','c.desclonga','c.req ','c.studing','c.status',
-  'c.image','c.imageUrl','c.videoUrl','c.video','c.id_cat', ' c.price ',
+  'c.desccurta ','c.desclonga','c.req','c.studing', ' c.image ','c.status', 'c.imageUrl','c.videoUrl','c.video','c.id_cat', ' c.price ',
    'c.id_user', {author: ' u.name '}
    ,{whatsapp:'u.watshapp'},{phone:'u.phone'},
-   {endereco:'u.endereco'},{imageUser:'u.image'},{imageUserUrl:'u.imageUrl'},
+   {endereco:'u.endereco'},{imageUser:'u.image'},
    {email:'u.email'},{telefone:'u.telefone'},{nota:'u.nota'})
   .whereRaw('?? = ??',[ 'c.id_user','u.id'])
   .where('c.deleteAt','=',false)
